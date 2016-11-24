@@ -1,0 +1,23 @@
+{
+  "name": "filecoder",
+  "version": "0.1.0",
+  "description": "NodeJS file encoding changer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockedpanda/filecoder.git"
+  },
+  "keywords": [
+    "file",
+    "code"
+  ],
+  "author": "rockedpanda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rockedpanda/filecoder/issues"
+  },
+  "homepage": "https://github.com/rockedpanda/filecoder#readme"
+}
