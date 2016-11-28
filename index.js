@@ -87,7 +87,11 @@ function changeFileSync(filePath, orgCode, destCode) {
     var buffer = Buffer.from(fs.readFileSync(filePath, {
         encoding: 'binary'
     }), 'binary');   //得到文件内容对应的Buffer
+    console.log('---------------------------------1');
+    console.log(buffer);
     var text = iconv.decode(buffer, orgCode); //使用原始编码格式解码
+    console.log(text);
+    console.log('---------------------------------2');
     fs.writeFileSync(filePath, iconv.encode(text, destCode), 'binary'); //按照新格式编码,再按二进制方式写入
 }
 
@@ -98,11 +102,11 @@ function getStr(str, orgCode){
 function changeStr(str, orgCode, destCode) {
     var iconv = require('iconv-lite');
     str = iconv.decode(Buffer.from(str), orgCode);
-    return iconv.encode("Sample input string", destCode);
+    return iconv.encode(str, destCode).toString();
 }
 
 function getFs(code){
-    return new CoderFs(code);
+    return new CoderFs(code||'utf8');
 }
 
 exports.getStr = getStr;
