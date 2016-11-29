@@ -25,6 +25,9 @@ CoderFs.prototype.readFileSync = function(file,options) {
     }
     return fs.readFileSync(file, options);
 };
+CoderFs.prototype.decodeStream = function(orgCode){
+    return iconv.decodeStream(orgCode);
+};
 CoderFs.prototype.createReadStream = function(path, options, targetCode) {
     targetCode = targetCode || 'utf8';
     let code = this.defaultCode;
